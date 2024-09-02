@@ -77,15 +77,41 @@ type 接口名 interface {
 接口的赋值形式
 ```
 
+15.golang是**以首字母大小**写来区分对包外是否可见。
+
 ## 二、并发
 
 进程
 
 线程
 
-协程 	(协程如何执行)  go创建
+2.goroutine协程 	(协程如何执行)  **go创建**
 
+```
+nil类似null
+```
 
+并发的概念，IO多路复用
 
+用go创建
 
+3.channel 管道通信
+
+```
+用make创建信道
+传数据用channel <- data，取数据用<- channel
+```
+
+4.range
+
+```
+range 用于迭代数据结构中的元素(类似for与auto这种增强for循环)
+```
+
+5.select
+
+```
+类似switch case
+select 语句只能用于通道操作，每个 case 必须是一个通道操作，要么是发送要么是接收。
+```
 
