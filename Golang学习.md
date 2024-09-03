@@ -115,3 +115,16 @@ range 用于迭代数据结构中的元素(类似for与auto这种增强for循环
 select 语句只能用于通道操作，每个 case 必须是一个通道操作，要么是发送要么是接收。
 ```
 
+## 三、创建一个Go项目
+
+vscode配置
+
+vscode部署golang教程
+
+https://blog.csdn.net/m0_71139661/article/details/140274871?spm=1001.2101.3001.6650.2&utm_medium=distribute.pc_relevant.none-task-blog-2%7Edefault%7EYuanLiJiHua%7EPosition-2-140274871-blog-139811571.235%5Ev43%5Epc_blog_bottom_relevance_base1&depth_1-utm_source=distribute.pc_relevant.none-task-blog-2%7Edefault%7EYuanLiJiHua%7EPosition-2-140274871-blog-139811571.235%5Ev43%5Epc_blog_bottom_relevance_base1&utm_relevant_index=5
+
+
+
+VSCode配置GO语言环境遇到的问题：go.mod file not found in current directory or any parent directory
+
+https://blog.csdn.net/OrientalGlass/article/details/130791604
