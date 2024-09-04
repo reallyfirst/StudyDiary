@@ -6,6 +6,10 @@
 
 2.声明 var
 
+```
+:=声明后要使用，不然会报错
+```
+
 3.匿名变量 _
 
 4.常量const 不能用:=
@@ -47,6 +51,9 @@ len：数据类型实际占用的内存空间长度，map、 channel 是可选�
 cap：为数据类型提前预留的内存空间长度
 example:
 
+make(chan int)和 make(chan int,1 )区别
+无缓冲和有缓冲
+
 ```
 
 12.结构体struct
@@ -75,6 +82,17 @@ type 接口名 interface {
     ...
 }
 接口的赋值形式
+```
+
+```
+go怎么实现多态：
+函数重载
+```
+
+```
+什么是非侵入式？
+该结构体只要能实现接口的所有方法，即视为，该结构体实现该接口
+接口的类型不需要显式地声明它们实现了某个接口
 ```
 
 15.golang是**以首字母大小**写来区分对包外是否可见。
@@ -128,3 +146,24 @@ https://blog.csdn.net/m0_71139661/article/details/140274871?spm=1001.2101.3001.6
 VSCode配置GO语言环境遇到的问题：go.mod file not found in current directory or any parent directory
 
 https://blog.csdn.net/OrientalGlass/article/details/130791604
+
+
+
+```
+%+v  用于打印结构体的详细信息
+```
+
+
+
+c++与go  线程安全
+
+```
+c++ 线程不安全
+go 线程安全 不需要加锁
+```
+
+## 四、协程
+
+1.协程之间数据传输用 管道 channel
+
+2、**有缓冲和无缓冲通道的区别？**
