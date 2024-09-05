@@ -167,3 +167,44 @@ go 线程安全 不需要加锁
 1.协程之间数据传输用 管道 channel
 
 2、**有缓冲和无缓冲通道的区别？**
+
+## 五、框架
+
+### 1、gin框架
+
+web开发框架
+
+```
+package main
+
+import (
+	"log"
+	"net/http"
+
+	"github.com/gin-gonic/gin"
+)
+
+func SayHello(c *gin.Context) {
+	c.String(http.StatusOK, "hello") //以字符串"hello"作为返回包
+}
+
+func main() {
+	engine := gin.Default() //生成一个默认的gin引擎
+	engine.Handle(http.MethodGet, "/say_hello", SayHello)
+	err := engine.Run(":8080") //使用8080端口号，开启一个web服务
+	if err != nil {
+		log.Print("engine run err: ", err.Error())
+		return
+	}
+}
+```
+
+## 六、数据结构
+
+1、创建数组
+
+```
+var arr1 = [...]int{1,2,3,4}
+var arr1 = [10]int{1,2,3,4}默认为0
+```
+
