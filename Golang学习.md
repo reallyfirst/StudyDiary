@@ -208,3 +208,26 @@ var arr1 = [...]int{1,2,3,4}
 var arr1 = [10]int{1,2,3,4}默认为0
 ```
 
+2.slice和array
+
+切片相当于动态数组
+
+```
+C 语言的数组变量是指向数组第一个元素的指针  指针传递
+Go 语言的数组是一个值					值传递
+```
+
+
+
+```go
+fmt.Println(*(*int)(unsafe.Pointer(uintptr(unsafe.Pointer(&arr[0])) + 1*size))：
+            
+```
+
+
+
+## 七、GO所用到的包
+
+fmt
+
+unsafe
