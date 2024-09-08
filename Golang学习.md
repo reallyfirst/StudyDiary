@@ -217,7 +217,18 @@ C 语言的数组变量是指向数组第一个元素的指针  指针传递
 Go 语言的数组是一个值					值传递
 ```
 
+切片扩容name[:5]
 
+切片传递是引用传递
+
+```
+切片作为参数传递
+
+```
+
+Golang中的切片追加append()
+
+追加后若超过原数组容量上限地址会发生变化，跟引用区别
 
 ```go
 fmt.Println(*(*int)(unsafe.Pointer(uintptr(unsafe.Pointer(&arr[0])) + 1*size))：
