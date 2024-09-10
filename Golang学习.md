@@ -58,6 +58,8 @@ make(chan int)和 make(chan int,1 )区别
 切片创建
 s:=[]int{1,2,3}
 make([]int,3)
+
+切片操作是左闭右开的
 ```
 
 12.结构体struct
@@ -100,6 +102,21 @@ go怎么实现多态：
 ```
 
 15.golang是**以首字母大小**写来区分对包外是否可见。
+
+16.接收器
+
+```
+值接收器 func(p Person)
+指针接收器func(P * Preson)
+
+修改接收器的值：如果需要在方法中修改接收器的值，必须使用指针接收器。
+避免值拷贝：对于大的结构体，使用指针接收器可以避免值拷贝，提高性能。
+一致性：对于一些类型，最好对所有的方法都使用指针接收器，以保持一致性。
+
+值接收器和指针接收器的赋值一样
+```
+
+
 
 ## 二、并发
 
@@ -266,7 +283,52 @@ type ArrayStack struct {
     size  int        // 栈的元素数量
     lock  sync.Mutex // 为了并发安全使用的锁
 }
+
+//链表栈
+type LinkStack struct {
+    root *LinkNode  // 链表起点
+    size int        // 栈的元素数量
+    lock sync.Mutex // 为了并发安全使用的锁
+}
+
+// 链表节点
+type LinkNode struct {
+    Next  *LinkNode
+    Value string
+}
 元素和size
+```
+
+```
+排除栈顶元素
+stack.array = stack.array[0 : stack.size-1]
+
+写一个入栈和出栈
+```
+
+5、Queue
+
+```
+//数组队列
+type ArrayQueue struct {
+    array []string   // 底层切片
+    size  int        // 队列的元素数量
+    lock  sync.Mutex // 为了并发安全使用的锁
+}
+
+
+// 链表队列
+type LinkQueue struct {
+    root *LinkNode  // 链表起点
+    size int        // 队列的元素数量
+    lock sync.Mutex // 为了并发安全使用的锁
+}
+
+// 链表节点
+type LinkNode struct {
+    Next  *LinkNode
+    Value string
+}
 ```
 
 
