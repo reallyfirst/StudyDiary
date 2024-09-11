@@ -12,6 +12,10 @@
 
 3.匿名变量 _
 
+```
+匿名结构体  赋值  struct  初始化
+```
+
 4.常量const 不能用:=
 
 5.判断 不用加（）小括号
@@ -351,5 +355,62 @@ unsafe
 unsafe.Pointer
 uintptr无符号整数类型
 用于将指针转换为整数值或将整数值转换回指针
+```
+
+## 八、题收集
+
+1、[为什么 Go map 和 slice 是非线程安全的？](https://segmentfault.com/a/1190000040716956)
+
+```
+多协程处理会报错和数据不对
+
+配合读写锁
+
+mutex+map初步解决并发问题，但是只有一把锁会出现抢占锁的情况->go支持并发读写map(sync.Map)[空间换时间]
+
+
+根据需要，map不适合线程安全机制，在协程中效率会产生印象，不适应这种环境
+```
+
+```
+type Map struct {
+ mu Mutex
+ read atomic.Value // readOnly
+ dirty map[interface{}]*entry
+ misses int
+}
+适合读多写少的场景
+```
+
+```
+var m sync.Map
+
+func main() {
+ //写入
+ data := []string{"煎鱼", "咸鱼", "烤鱼", "蒸鱼"}
+ for i := 0; i < 4; i++ {
+  go func(i int) {
+   m.Store(i, data[i])
+  }(i)
+ }
+ time.Sleep(time.Second)
+
+ //读取
+ v, ok := m.Load(0)
+ fmt.Printf("Load: %v, %v\n", v, ok)
+
+ //删除
+ m.Delete(1)
+
+ //读或写
+ v, ok = m.LoadOrStore(1, "吸鱼")
+ fmt.Printf("LoadOrStore: %v, %v\n", v, ok)
+
+ //遍历
+ m.Range(func(key, value interface{}) bool {
+  fmt.Printf("Range: %v, %v\n", key, value)
+  return true
+ })
+}
 ```
 
