@@ -158,6 +158,8 @@ range 用于迭代数据结构(array,slice,map,channel)中的元素(类似for与
 select 语句只能用于通道操作，每个 case 必须是一个通道操作，要么是发送要么是接收。
 ```
 
+
+
 ## 三、创建一个Go项目
 
 vscode配置
@@ -192,6 +194,42 @@ go 线程安全 不需要加锁
 1.协程之间数据传输用 管道 channel
 
 2、**有缓冲和无缓冲通道的区别？**
+
+3、[Golang 入门 : 理解并发与并行](https://www.cnblogs.com/sparkdev/p/10930120.html)
+
+4、[Golang 入门 : 等待 goroutine 完成任务](https://www.cnblogs.com/sparkdev/p/10917536.html)
+
+```
+不等待的话，goroutine 以非阻塞的方式执行，它们会随着程序(主线程)的结束而消亡
+
+```
+
+```go
+func main() {
+    done := make(chan bool)
+    go func() {
+        for i := 0; i < 3; i++ {
+            time.Sleep(100 * time.Millisecond)
+            fmt.Println("hello world")
+        }
+        done <- true
+    }()
+
+    <-done
+    fmt.Println("over!")
+}
+
+done通道收到数据后协程停止阻塞，
+
+
+2.WaitGroup 用来等待单个或多个 goroutines 执行结束
+
+runtime.GOMAXPROCS(1)分配逻辑处理器
+```
+
+<img src="Golang学习.assets/image-20240912175733033.png" alt="image-20240912175733033" style="zoom:33%;" />
+
+协程需要切换
 
 ## 五、框架
 
