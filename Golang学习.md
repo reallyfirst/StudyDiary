@@ -231,6 +231,28 @@ runtime.GOMAXPROCS(1)分配逻辑处理器
 
 协程需要切换
 
+```
+进程、线程、协程
+
+线程
+```
+
+Linux线程实现
+
+```
+Go 调度器最多可以创建 10000 个线程  创建线程数量跟cpu核数有关
+```
+
+Go Concurrency Patterns: Context
+
+```
+上下文 Context
+Go 语言中用来设置截止日期、同步信号，传递请求相关值的结构体
+ goroutine 的上下文   包含goroutine 的运行状态、环境、现场等信息。
+```
+
+
+
 ## 五、框架
 
 ### 1、gin框架
