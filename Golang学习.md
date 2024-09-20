@@ -258,11 +258,14 @@ Go Concurrency Patterns: Context
 
 ```
 上下文 Context
-Go 语言中用来设置截止日期、同步信号，传递请求相关值的结构体
-取消信号、超时时间、截止时间、k-v 等
- goroutine 的上下文   包含goroutine 的运行状态、环境、现场等信息。
+简单说 就是
+ 快速退出协程
+ 协程直接传递信息
  
  todo 返回一个空的context
+ 
+ WithTimeout  设置任务超时时间
+ Background   创建一个空的上下文
 ```
 
 
@@ -486,5 +489,16 @@ func main() {
   return true
  })
 }
+```
+
+## 疑问
+
+在函数里调用有协程的函数，然后再执行有协程的匿名函数
+
+## 学习心得
+
+```
+9.18重新规划一下学习思路，现在细究比较吃力
+10.40.22.73/orcl,,kpms,encrypt(kpms,kpms1),off,2
 ```
 
