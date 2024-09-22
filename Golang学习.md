@@ -254,7 +254,7 @@ Linux线程实现
 Go 调度器最多可以创建 10000 个线程  创建线程数量跟cpu核数有关
 ```
 
-Go Concurrency Patterns: Context
+#### Context
 
 ```
 上下文 Context
@@ -266,6 +266,12 @@ Go Concurrency Patterns: Context
  
  WithTimeout  设置任务超时时间
  Background   创建一个空的上下文
+ 
+ 找个资料分析源码好一点
+```
+
+```
+使用Context传递traceId<重点>
 ```
 
 
