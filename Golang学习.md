@@ -288,6 +288,9 @@ chan<- float64  // 只可以用来发送 float64 类型的数据
 2、blocking 
 make(chan int)
 make(chan int，1)
+
+3、select选择
+4、close
 ```
 
 
