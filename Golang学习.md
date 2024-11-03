@@ -156,8 +156,6 @@ Strudent和&Student区别
 go语言编译器有一定自动识别
 ```
 
-
-
 ## 二、并发
 
 进程
@@ -567,6 +565,10 @@ uintptr无符号整数类型
 
 ![image-20241002024929314](C:\Users\really\AppData\Roaming\Typora\typora-user-images\image-20241002024929314.png)
 
+## 八、进阶语法
+
+
+
 ## 八、题收集
 
 1、[为什么 Go map 和 slice 是非线程安全的？](https://segmentfault.com/a/1190000040716956)
@@ -638,5 +640,14 @@ func main() {
 
 
 
+```
+
+## 微信摇一摇
+
+sql转struct
+
+```
+{"view_prize_list":[{"id":1,"name":"Q币","pic":"http://q.qlogo.cn/g?b=qq\u0026nk=1\u0026s=100\u0026nk2=1\u0026s2=100","link":"http://q.qq.com","type":1,"data":"100Q币","total":20000,"left":20000,"is_use":1,"probability":5000,"probability_max":5000,"probability_min":0},{"id":2,"name":"充电宝","pic":"","link":"","type":3,"data":"","total":100,"left":100,"is_use":1,"probability":100,"probability_max":5100,"probability_min":5000},{"id":3,"name":"iphone14","pic":"","link":"","type":4,"data":"","total":10,"left":10,"is_use":1,"probability":10,"probability_max":5110,"probability_min":5100},{"id":4,"name":"优惠券满100减10元","pic":"","link":"","type":2,"data":"黄焖鸡外卖优惠券","total":5000,"left":5000,"is_use":1,"probability":3000,"probability_max":8110,"probability_min":5110}]}
+--- PASS: TestAddPrize (0.00s)
 ```
 
